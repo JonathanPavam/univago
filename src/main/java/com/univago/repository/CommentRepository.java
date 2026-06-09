@@ -1,4 +1,6 @@
 package com.univago.repository;
+import com.univago.model.Comment;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CommentRepository {
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }

@@ -9,9 +9,7 @@ import java.time.LocalDate;
 public class Reservation {
     private final Long id;
     private final User guest;
-    private LocalDate date;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
     private Location location;
-
-
-
 }

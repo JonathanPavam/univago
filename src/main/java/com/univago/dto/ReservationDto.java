@@ -7,7 +7,8 @@ import java.time.LocalDate;
 
 @Data
 public class ReservationDto {
-    private  User guest;
-    private LocalDate date;
+    private final User guest;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
     private Location location;
 }
