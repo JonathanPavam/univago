@@ -19,7 +19,7 @@ public class UserService {
     private UserMapper userMapper;
 
 
-    public UserDto create (UserDto dto){
+    public UserDto create (UserDto dto) {
         User user = userMapper.toEntity(dto);
         user = userRepository.save(user);
         return userMapper.toDto(user);
@@ -27,7 +27,7 @@ public class UserService {
 
     public UserDto put (Long id, UserDto dto){
         User user = userRepository.findById(id).orElseThrow();
-        update(user, dto);
+        dtoToEntity(user, dto);
         user = userRepository.save(user);
         return userMapper.toDto(user);
     }
@@ -44,7 +44,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void update (User entity, UserDto dto){
+    public void dtoToEntity (User entity, UserDto dto){
         entity.setName(dto.getName());
         entity.setEmail(dto.getEmail());
         entity.setPhone(dto.getPhone());

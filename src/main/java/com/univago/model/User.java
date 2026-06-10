@@ -1,6 +1,7 @@
 package com.univago.model;
 
 import com.univago.model.util.Address;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
@@ -8,8 +9,12 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@Entity
+@Table(name= "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
@@ -18,6 +23,7 @@ public class User {
     private String secondaryPhone;
     private String cpf;
     private LocalDate dateOfBirth;
+    @Embedded
     private Address address;
     private String profileImage;
     private String passwordHash;

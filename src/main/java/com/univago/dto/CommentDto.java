@@ -4,9 +4,12 @@ import com.univago.model.Post;
 import com.univago.model.User;
 import lombok.Data;
 
+import java.time.Instant;
+
 @Data
 public class CommentDto {
     private String content;
     private Post post;
     private User user;
+    private Instant instant;
 }
