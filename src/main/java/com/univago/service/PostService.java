@@ -6,7 +6,6 @@ import com.univago.model.Post;
 import com.univago.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +16,6 @@ public class PostService {
 
     @Autowired
     private PostMapper postMapper;
-
 
     public PostDto create (PostDto dto){
         Post post = postMapper.toEntity(dto);

@@ -1,6 +1,4 @@
 package com.univago.dto;
-
-import com.univago.model.User;
 import com.univago.model.util.Address;
 import lombok.Data;
 
@@ -8,6 +6,6 @@ import lombok.Data;
 public class LocationDto {
     private String name;
     private Address address;
-    private User owner;
+    private Long owner;
     private String content;
 }

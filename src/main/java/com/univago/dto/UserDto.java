@@ -1,5 +1,4 @@
 package com.univago.dto;
-
 import lombok.Data;
 
 @Data

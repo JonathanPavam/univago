@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/reservation")
 public class ReservationController {
     @Autowired
     ReservationService reservationService;

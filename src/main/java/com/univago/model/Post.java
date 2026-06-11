@@ -1,20 +1,19 @@
 package com.univago.model;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
+@Table(name = "tb_posts")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final String id;
+    private Long id;
     private String title;
     private String content;
-    @ManyToOne
-    private final User authorId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id")
+    private User authorId;
 }

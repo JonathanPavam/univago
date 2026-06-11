@@ -3,13 +3,9 @@ package com.univago.service;
 import com.univago.dto.CommentDto;
 import com.univago.mapper.CommentMapper;
 import com.univago.model.Comment;
-import com.univago.model.Comment;
-import com.univago.repository.CommentRepository;
 import com.univago.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +16,6 @@ public class CommentService {
 
     @Autowired
     private CommentMapper commentMapper;
-
 
     public CommentDto create (CommentDto dto){
         Comment Comment = commentMapper.toEntity(dto);

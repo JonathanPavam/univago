@@ -1,16 +1,15 @@
 package com.univago.model;
-
 import com.univago.model.util.Address;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import java.time.LocalDate;
-import java.util.Objects;
 
-@Getter
-@Setter
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
-@Table(name= "users")
+@Table(name= "tb_users")
 public class User {
 
     @Id
@@ -28,41 +27,4 @@ public class User {
     private String profileImage;
     private String passwordHash;
 
-    public User(){}
-
-    public User(Long id, String name, String email, String phone, String cpf, LocalDate dateOfBirth, Address address, String passwordHash) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.cpf = cpf;
-        this.dateOfBirth = dateOfBirth;
-        this.address = address;
-        this.passwordHash = passwordHash;
-    }
-
-    public User(Long id, String name, String email, String secondaryEmail, String phone, String secondaryPhone, String cpf, LocalDate dateOfBirth, Address address, String profileImage, String passwordHash) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.secondaryEmail = secondaryEmail;
-        this.phone = phone;
-        this.secondaryPhone = secondaryPhone;
-        this.cpf = cpf;
-        this.dateOfBirth = dateOfBirth;
-        this.address = address;
-        this.profileImage = profileImage;
-        this.passwordHash = passwordHash;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(id, user.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

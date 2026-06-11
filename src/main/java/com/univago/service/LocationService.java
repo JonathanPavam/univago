@@ -1,12 +1,10 @@
 package com.univago.service;
-
 import com.univago.dto.LocationDto;
 import com.univago.mapper.LocationMapper;
 import com.univago.model.Location;
 import com.univago.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +15,6 @@ public class LocationService {
 
     @Autowired
     private LocationMapper locationMapper;
-
 
     public LocationDto create (LocationDto dto){
         Location location = locationMapper.toEntity(dto);
